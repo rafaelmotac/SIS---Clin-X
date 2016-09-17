@@ -7,3 +7,5 @@ Escrito como trabalho de conclusão de curso, requisito para obtenção do títu
 Clinical Management System written in ASP.NET MVC
 
 Written as Final Paper, requirement for obtaining bachelor's degree in Computer Information Systems
+
+Status: In progress
