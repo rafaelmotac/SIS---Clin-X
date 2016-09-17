@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr") 
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryUn")
+    @Scripts.Render("~/bundles/bootstrap")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("SIS - Clinica X", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" id="consultaDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Consulta
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="consultaDropDown">
+                            <li><a href="/Consultas/Index">Index</a></li>
+                            <li><a href="/Consultas/Create">Cadastrar</a></li>
+                            <li class="dropdown-submenu">
+                                <a>Buscar</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/Consultas/BuscarPorPaciente">Buscar Por Paciente</a></li>
+                                    <li><a href="/Consultas/BuscarPorMedico">Buscar Por Médico</a></li>
+                                    <li><a href="/Consultas/BuscarPorDia">Buscar Por Dia</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+ 
+    @RenderSection("scripts", required: false)
+</body>
+</html>

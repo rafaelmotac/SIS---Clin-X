@@ -1,0 +1,50 @@
+﻿@model RMC.TCC.Clinica.Models.Prontuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Prontuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.procedimentos)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.procedimentos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.prescricoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prescricoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.historico)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.historico)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idProntuario }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<RMC.TCC.Clinica.Models.Consulta>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Nome Paciente
+        </th>
+        <th>
+            Nome Prof.Saude
+        </th>
+        <th>
+            Data da Consulta
+        </th>
+        <th>
+           Data Fim da Consulta
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paciente.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfSaude.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtConsulta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtFim)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idConsulta }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idConsulta }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idConsulta })
+        </td>
+    </tr>
+}
+
+</table>

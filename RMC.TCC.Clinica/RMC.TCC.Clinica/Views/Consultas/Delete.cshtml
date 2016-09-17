@@ -1,0 +1,72 @@
+﻿@model RMC.TCC.Clinica.Models.Consulta
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Consulta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfSaude.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfSaude.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtConsulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtConsulta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtFim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtFim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horaInicioConsulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaInicioConsulta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horaFimConsulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaFimConsulta)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

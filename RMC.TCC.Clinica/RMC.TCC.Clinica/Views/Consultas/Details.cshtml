@@ -1,0 +1,66 @@
+﻿@model RMC.TCC.Clinica.Models.Consulta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Consulta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Paciente.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paciente.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfSaude.nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfSaude.nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtConsulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtConsulta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtFim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtFim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horaInicioConsulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaInicioConsulta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.horaFimConsulta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.horaFimConsulta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idConsulta }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

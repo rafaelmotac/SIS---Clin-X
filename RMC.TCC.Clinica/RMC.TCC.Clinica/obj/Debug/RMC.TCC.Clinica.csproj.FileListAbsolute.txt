@@ -1,0 +1,166 @@
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\csc.exe
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.Collections.Immutable.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\vbc.exe
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\VBCSCompiler.exe
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\VBCSCompiler.exe.config
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\RMC.TCC.Clinica.dll.config
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\RMC.TCC.Clinica.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\RMC.TCC.Clinica.pdb
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Antlr3.Runtime.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\EntityFramework.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\EntityFramework.SqlServer.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Google.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Web.Infrastructure.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Newtonsoft.Json.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Owin.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Helpers.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Mvc.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Optimization.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Razor.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.Deployment.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.Razor.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\WebGrease.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Helpers.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Mvc.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Optimization.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Razor.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.Deployment.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.Razor.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Antlr3.Runtime.pdb
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Newtonsoft.Json.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\EntityFramework.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\EntityFramework.SqlServer.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Google.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.dll
+c:\users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.pdb
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\csc.exe.config
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\csc.rsp
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\csi.exe
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\csi.rsp
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.AppContext.dll
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\vbc.exe.config
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\vbc.rsp
+C:\Users\rafae\documents\visual studio 2015\Projects\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.csprojResolveAssemblyReference.cache
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\csc.exe
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\csc.exe.config
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\csc.rsp
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\csi.exe
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\csi.rsp
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.AppContext.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\vbc.exe
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\vbc.exe.config
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\vbc.rsp
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\VBCSCompiler.exe
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\RMC.TCC.Clinica.dll.config
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\RMC.TCC.Clinica.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\RMC.TCC.Clinica.pdb
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Antlr3.Runtime.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\EntityFramework.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\EntityFramework.SqlServer.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Newtonsoft.Json.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Owin.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Helpers.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Mvc.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Optimization.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Razor.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.Deployment.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.Razor.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\WebGrease.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Antlr3.Runtime.pdb
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Newtonsoft.Json.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Helpers.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Mvc.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Optimization.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.Razor.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.Deployment.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\System.Web.WebPages.Razor.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\EntityFramework.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\EntityFramework.SqlServer.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.csprojResolveAssemblyReference.cache
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.dll
+C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.pdb

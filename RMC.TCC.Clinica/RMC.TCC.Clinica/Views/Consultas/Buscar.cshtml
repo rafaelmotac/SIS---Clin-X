@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Buscar";
+}
+
+<h2>Buscar Consulta</h2>
+<div class="row">
+    <div class="col-md-6">
+        @using (Ajax.BeginForm("resultadoBuscaPaciente", "Consultas", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "resultado", LoadingElementId = "ajax-loader", OnBegin = "display()", OnComplete = "hide()", LoadingElementDuration = 500 }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="panel panel-primary">
+                <div class="panel-heading">Buscar Por Paciente</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>CPF Paciente</label>
+                        <input type="text" class="form-control" placeholder="CPF Paciente.." id="name" name="cpf" />
+                    </div>
+                    <div class="form-group">
+                        <label>Data Consulta</label>
+                        <input type="date" class="form-control" placeholder="Data da Consulta.." id="dataConsulta" name="dataConsulta" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Buscar Consulta" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-6">
+        @using (Ajax.BeginForm("resultadoBuscaMedico", "Consultas", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "resultado", LoadingElementId = "ajax-loader", OnBegin = "display()", OnComplete = "hide()", LoadingElementDuration = 500 }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="panel panel-primary">
+                <div class="panel-heading">Buscar Por Medico</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>CPF Medico</label>
+                        <input type="text" class="form-control" placeholder="CPF Paciente.." id="name" name="cpf" />
+                    </div>
+                    <div class="form-group">
+                        <label>Data Consulta</label>
+                        <input type="date" class="form-control" placeholder="Data da Consulta.." id="dataConsulta" name="dataConsulta" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Buscar Consulta" />
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-6">
+        @using (Ajax.BeginForm("resultadoBuscaDia", "Consultas", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "resultado", LoadingElementId = "ajax-loader", OnBegin = "display()", OnComplete = "hide()", LoadingElementDuration = 500 }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="panel panel-primary">
+                <div class="panel-heading">Buscar Por Dia</div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label>Data Consulta</label>
+                        <input type="date" class="form-control" placeholder="Data da Consulta.." id="dataConsulta" name="dataConsulta" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Buscar Consulta" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div id="resultado"></div>
+<div id="ajax-loader" class="ajax-loader">
+    <img src="@Url.Content("~/Content/img/ajax-loader.gif")" />
+    <br />
+    Carregando...
+</div>
+
+<script>
+    function display() {
+        $('#ajax-loader').css("display", "normal");
+    };;
+
+    function hide() {
+        $('#ajax-loader').css("display", "none");
+    };
+</script>
+

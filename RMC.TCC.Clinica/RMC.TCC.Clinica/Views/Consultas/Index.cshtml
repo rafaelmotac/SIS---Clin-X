@@ -1,0 +1,63 @@
+﻿@model IEnumerable<RMC.TCC.Clinica.Models.Consulta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Paciente.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProfSaude.nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dtConsulta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dtFim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.horaInicioConsulta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.horaFimConsulta)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paciente.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProfSaude.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtConsulta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtFim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.horaInicioConsulta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.horaFimConsulta)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idConsulta }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idConsulta }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idConsulta })
+        </td>
+    </tr>
+}
+
+</table>
