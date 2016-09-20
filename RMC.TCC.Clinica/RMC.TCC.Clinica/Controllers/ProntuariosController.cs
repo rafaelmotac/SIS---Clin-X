@@ -54,9 +54,8 @@ namespace RMC.TCC.Clinica.Controllers
         }
 
         // GET: Prontuarios/Create
-        public ActionResult Create()
+        public ActionResult Cadastrar()
         {
-            ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome");
             return View();
         }
 

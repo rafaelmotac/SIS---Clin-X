@@ -20,13 +20,11 @@ namespace RMC.TCC.Clinica.Models
         [DisplayName("ID do Prontuário")]
         public int idProntuario { get; set; }
 
-        [Column(TypeName = "text")]
-        [Required]
+        [Column(TypeName = "text")]       
         [DisplayName("Procedimentos")]
         public string procedimentos { get; set; }
 
         [Column(TypeName = "text")]
-        [Required]
         [DisplayName("Prescrições")]
         public string prescricoes { get; set; }
 

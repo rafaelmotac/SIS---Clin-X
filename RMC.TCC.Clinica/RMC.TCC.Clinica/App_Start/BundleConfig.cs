@@ -17,6 +17,14 @@ namespace RMC.TCC.Clinica
             bundles.Add(new ScriptBundle("~/bundles/jqueryUn").Include(
                         "~/Scripts/jquery.unobtrusive-ajax.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/inputmask").Include(
+                        "~/Scripts/jquery.inputmask/inputmask.js",
+                        "~/Scripts/jquery.inputmask/jquery.inputmask.js",
+                        "~/Scripts/jquery.inputmask/inputmask.extensions.js",
+                        "~/Scripts/jquery.inputmask/inputmask.date.extensions.js",
+                        //and other extensions you want to include
+                        "~/Scripts/jquery.inputmask/inputmask.numeric.extensions.js"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(

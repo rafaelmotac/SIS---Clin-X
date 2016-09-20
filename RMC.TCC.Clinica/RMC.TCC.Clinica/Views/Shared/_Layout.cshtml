@@ -9,6 +9,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryUn")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/inputmask")
 
 </head>
 <body>
@@ -43,6 +44,16 @@
                                     <li><a href="/Consultas/BuscarPorDia">Buscar Por Dia</a></li>
                                 </ul>
                             </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" id="consultaDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Prontuário
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="consultaDropDown">
+                            <li><a href="/Prontuarios/Cadastrar">Cadastrar</a></li>
+                            <li><a href="/Prontuarios/Buscar">Buscar</a></li>                          
                         </ul>
                     </li>
                 </ul>

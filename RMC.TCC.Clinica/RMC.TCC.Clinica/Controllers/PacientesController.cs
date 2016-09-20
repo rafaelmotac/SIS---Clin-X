@@ -20,6 +20,33 @@ namespace RMC.TCC.Clinica.Controllers
             var paciente = db.Paciente.Include(p => p.Convenio);
             return View(paciente.ToList());
         }
+        
+        
+        public ActionResult BuscarPaciente(string cpf)
+        {
+            Paciente paciente = (from p in db.Paciente where p.cpf.Equals(cpf) select p).FirstOrDefault();
+
+            if(paciente != null)
+            {
+                Prontuario prontuario = (from p in db.Prontuario
+                                         where p.paciente_IdPaciente == paciente.idPaciente
+                                         select p).FirstOrDefault();
+                if(prontuario != null)
+                {
+                    ViewBag.prontuario = prontuario;
+                    return PartialView("_resultadoPaciente", paciente);
+
+                }else
+                {
+                    return PartialView("_resultadoPaciente", paciente);
+                }
+            }else
+            {
+                return PartialView("_resultadoPaciente", paciente);
+            }
+
+           
+        }
 
         // GET: Pacientes/Details/5
         public ActionResult Details(int? id)

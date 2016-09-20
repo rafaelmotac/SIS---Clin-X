@@ -1,0 +1,78 @@
+﻿@model RMC.TCC.Clinica.Models.Paciente
+
+@if (ViewBag.prontuario != null)
+{
+    <h3>Paciente já possui um Prontuário !</h3>
+    @Html.ActionLink("Visualizar Prontuário", "Details", "Prontuarios", new { id = ViewBag.prontuario.idProntuario }, null)
+}
+else if (Model == null)
+{
+    <h3>Paciente não cadastrado no sistema.</h3>
+    @Html.ActionLink("Cadastrar Paciente","Create","Pacientes")
+}
+else
+{
+    <div>
+        <h4>Paciente</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Convenio.numConvenio)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Convenio.numConvenio)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.nome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.cpf)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cpf)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.telefone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.telefone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.endereco)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.endereco)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.dtNascimento)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.dtNascimento)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @using (Ajax.BeginForm("Create", "Prontuarios", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "resultado", LoadingElementId = "ajax-loader", OnBegin = "display()", OnComplete = "hide()", LoadingElementDuration = 500 }))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" id="paciente_IdPaciente" name="paciente_IdPaciente" value="@Model.idPaciente" />
+            <input type="submit" class="btn btn-primary" value="Cadastrar Prontuário" />
+        }
+    </p>
+
+}
