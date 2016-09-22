@@ -44,6 +44,5 @@ namespace RMC.TCC.Clinica.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Medico> Medico { get; set; }
-
     }
 }

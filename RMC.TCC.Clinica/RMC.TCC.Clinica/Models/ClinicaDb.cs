@@ -35,7 +35,8 @@ namespace RMC.TCC.Clinica.Models
             modelBuilder.Entity<Convenio>()
                 .HasMany(e => e.Paciente)
                 .WithOptional(e => e.Convenio)
-                .HasForeignKey(e => e.convenio_idConvenio);
+                .HasForeignKey(e => e.convenio_idConvenio)
+                .WillCascadeOnDelete();
 
             modelBuilder.Entity<Exame>()
                 .Property(e => e.nome)
@@ -81,14 +82,12 @@ namespace RMC.TCC.Clinica.Models
             modelBuilder.Entity<Paciente>()
                 .HasMany(e => e.Consulta)
                 .WithRequired(e => e.Paciente)
-                .HasForeignKey(e => e.paciente_IdPaciente)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(e => e.paciente_IdPaciente);
 
             modelBuilder.Entity<Paciente>()
                 .HasMany(e => e.Prontuario)
                 .WithRequired(e => e.Paciente)
-                .HasForeignKey(e => e.paciente_IdPaciente)
-                .WillCascadeOnDelete(false);
+                .HasForeignKey(e => e.paciente_IdPaciente);
 
             modelBuilder.Entity<ProfSaude>()
                 .Property(e => e.nome)
