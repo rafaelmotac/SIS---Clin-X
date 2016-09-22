@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using RMC.TCC.Clinica.Models;
 
-namespace RMC.TCC.Clinica.Controllers
+namespace RMC.TCC.Clinica.Views
 {
     public class ConveniosController : Controller
     {

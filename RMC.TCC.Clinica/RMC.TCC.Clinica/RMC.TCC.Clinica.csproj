@@ -172,7 +172,6 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ConsultasController.cs" />
-    <Compile Include="Controllers\ConveniosController.cs" />
     <Compile Include="Controllers\DentistasController.cs" />
     <Compile Include="Controllers\ExamesController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
@@ -200,6 +199,7 @@
     <Compile Include="Models\Prontuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\ConveniosController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -303,11 +303,6 @@
     <Content Include="Views\Dentistas\Details.cshtml" />
     <Content Include="Views\Dentistas\Edit.cshtml" />
     <Content Include="Views\Dentistas\Index.cshtml" />
-    <Content Include="Views\Convenios\Create.cshtml" />
-    <Content Include="Views\Convenios\Delete.cshtml" />
-    <Content Include="Views\Convenios\Details.cshtml" />
-    <Content Include="Views\Convenios\Edit.cshtml" />
-    <Content Include="Views\Convenios\Index.cshtml" />
     <Content Include="Views\Exames\Create.cshtml" />
     <Content Include="Views\Exames\Delete.cshtml" />
     <Content Include="Views\Exames\Details.cshtml" />
@@ -342,6 +337,11 @@
     <Content Include="Views\Prontuarios\_resultadoBusca.cshtml" />
     <Content Include="Views\Prontuarios\Cadastrar.cshtml" />
     <Content Include="Views\Pacientes\_resultadoPaciente.cshtml" />
+    <Content Include="Views\Convenios\Create.cshtml" />
+    <Content Include="Views\Convenios\Delete.cshtml" />
+    <Content Include="Views\Convenios\Details.cshtml" />
+    <Content Include="Views\Convenios\Edit.cshtml" />
+    <Content Include="Views\Convenios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
