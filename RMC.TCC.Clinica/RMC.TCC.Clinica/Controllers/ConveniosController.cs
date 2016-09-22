@@ -8,11 +8,21 @@ using System.Web;
 using System.Web.Mvc;
 using RMC.TCC.Clinica.Models;
 
-namespace RMC.TCC.Clinica.Views
+namespace RMC.TCC.Clinica.Controllers
 {
     public class ConveniosController : Controller
     {
         private ClinicaDb db = new ClinicaDb();
+
+        public ActionResult CadastrarConvenio(int idPaciente)
+        {
+            Paciente paciente = db.Paciente.Find(idPaciente);
+
+            ViewBag.Paciente = paciente;
+
+            return View();
+        }
+
 
         // GET: Convenios
         public ActionResult Index()
@@ -46,7 +56,7 @@ namespace RMC.TCC.Clinica.Views
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idConvenio,numConvenio,nomeConvenio")] Convenio convenio)
+        public ActionResult Create([Bind(Include = "idConvenio,numConvenio,nomeConvenio,paciente_IdPaciente")] Convenio convenio)
         {
             if (ModelState.IsValid)
             {
