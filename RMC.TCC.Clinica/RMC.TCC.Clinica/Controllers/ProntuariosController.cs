@@ -70,11 +70,9 @@ namespace RMC.TCC.Clinica.Controllers
             {
                 db.Prontuario.Add(prontuario);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return PartialView("_resultadoCadastrar");
             }
-
-            ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome", prontuario.paciente_IdPaciente);
-            return View(prontuario);
+            return PartialView("_resultadoCadastrar");
         }
 
         // GET: Prontuarios/Edit/5
