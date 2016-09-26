@@ -1,0 +1,37 @@
+﻿@model RMC.TCC.Clinica.Models.Prontuario
+
+@{
+    ViewBag.Title = "Exames";
+}
+
+<h2>Exames</h2>
+
+<h3>@Model.Paciente.nome | @Model.Paciente.cpf</h3>
+<hr />
+
+<div class="panel panel-primary">
+    <div class="panel-heading">Exames do Paciente</div>
+    <div class="panel-body">
+        <table class="table table-responsive">
+            <tr>
+                <th>Código</th>
+                <th>Nome</th>
+            </tr>
+            @foreach (RMC.TCC.Clinica.Models.Exame exame in Model.Exame)
+            {
+                <tr>
+                    <td>exame.idExame</td>
+                    <td>exame.nome</td>
+                </tr>
+            }
+        </table>
+        @using (Html.BeginForm("CadastrarExameProntuario", "Prontuarios"))
+        {
+            <input type="hidden" id="idProntuario" name="idProntuario" value="@Model.idProntuario" />
+            <input type="submit" class="btn btn-primary" value="Cadastrar Novo Exame" />
+        }
+    </div>
+</div>
+
+
+

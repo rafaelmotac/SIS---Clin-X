@@ -26,16 +26,36 @@ namespace RMC.TCC.Clinica.Controllers
             var paciente = from p in db.Paciente where p.cpf.Equals(cpf) select p.idPaciente;
 
             var resultado = from p in db.Prontuario
-                            where p.paciente_IdPaciente == paciente.FirstOrDefault() select p;
+                                   where p.paciente_IdPaciente == paciente.FirstOrDefault()
+                                   select p;
 
-            return PartialView("_resultadoBusca",resultado.ToList());
+            return PartialView("_resultadoBusca",resultado.FirstOrDefault());
+        }
+
+        public ActionResult EditarExamesProntuario(int idProntuario)
+        {
+            Prontuario prontuario = db.Prontuario.Find(idProntuario);           
+
+            return View("Exames",prontuario);
+        }
+       
+        public ActionResult CadastrarExameProntuario(int idProntuario)
+        {
+            Prontuario prontuario = db.Prontuario.Find(idProntuario);
+
+            ViewBag.prontuario = prontuario;
+
+            List<Exame> exames = (from e in db.Exame select e).ToList();
+
+            ViewBag.Exames = new SelectList(exames, "idExame", "Nome");
+
+            return View();
         }
 
         // GET: Prontuarios
         public ActionResult Index()
         {
-            var prontuario = db.Prontuario.Include(p => p.Paciente);
-            return View(prontuario.ToList());
+            return View("Buscar");
         }
 
         // GET: Prontuarios/Details/5
