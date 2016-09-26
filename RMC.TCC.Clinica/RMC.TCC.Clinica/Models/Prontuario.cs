@@ -2,7 +2,6 @@ namespace RMC.TCC.Clinica.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -17,23 +16,17 @@ namespace RMC.TCC.Clinica.Models
         }
 
         [Key]
-        [DisplayName("ID do Prontuário")]
         public int idProntuario { get; set; }
 
-        [Column(TypeName = "text")]       
-        [DisplayName("Procedimentos")]
+        [Column(TypeName = "text")]
         public string procedimentos { get; set; }
 
         [Column(TypeName = "text")]
-        [DisplayName("Prescrições")]
         public string prescricoes { get; set; }
 
-        [DisplayName("ID do Paciente")]
-        [Index(IsUnique = true)]
         public int paciente_IdPaciente { get; set; }
 
         [Column(TypeName = "text")]
-        [DisplayName("Histórico do Prontuário")]
         public string historico { get; set; }
 
         public virtual Paciente Paciente { get; set; }

@@ -1,45 +1,43 @@
-﻿@model IEnumerable<RMC.TCC.Clinica.Models.Prontuario>
+﻿@model RMC.TCC.Clinica.Models.Prontuario
 
+<div class="row">
+    <h3>Prontuario</h3>
+    <hr />
+    <h4>@Model.Paciente.nome | @Model.Paciente.cpf</h4>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="control-label">Procedimentos</label>
+            <textarea readonly class="form-control">@Model.procedimentos</textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Prescrições</label>
+            <textarea readonly class="form-control">@Model.prescricoes</textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Histórico</label>
+            <textarea readonly class="form-control">@Model.historico</textarea>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Exames</div>
+            <div class="panel-body">
+                <table class="table table-responsive">
+                    <tr>
+                        <th>Código</th>
+                        <th>Nome</th>
+                    </tr>
+                    @foreach (RMC.TCC.Clinica.Models.Exame exame in Model.Exame)
+                    {
+                        <tr>
+                            <td>exame.idExame</td>
+                            <td>exame.nome/td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idProntuario }) |
+    @Html.ActionLink("Voltar para buscar", "Buscar")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Paciente.nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.procedimentos)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.prescricoes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.historico)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Paciente.nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.procedimentos)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.prescricoes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.historico)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idProntuario }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idProntuario }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idProntuario })
-        </td>
-    </tr>
-}
-
-</table>

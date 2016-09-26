@@ -26,6 +26,8 @@ namespace RMC.TCC.Clinica.Models
         [StringLength(45)]
         public string nomeConvenio { get; set; }
 
+        public int paciente_IdPaciente { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Paciente> Paciente { get; set; }
     }
