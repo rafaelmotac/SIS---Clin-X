@@ -50,7 +50,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idConvenio,numConvenio,nomeConvenio,paciente_IdPaciente")] Convenio convenio)
+        public ActionResult Create([Bind(Include = "numConvenio,nomeConvenio,paciente_IdPaciente")] Convenio convenio)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idConvenio,numConvenio,nomeConvenio")] Convenio convenio)
+        public ActionResult Edit([Bind(Include = "numConvenio,nomeConvenio")] Convenio convenio)
         {
             if (ModelState.IsValid)
             {

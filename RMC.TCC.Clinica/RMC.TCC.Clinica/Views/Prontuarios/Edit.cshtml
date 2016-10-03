@@ -30,7 +30,7 @@
                             </table>
                             <hr />
                             <div class="form-group">
-                                <input type="hidden" id="idProntuario" name="idProntuario" value="@Model.idProntuario" />
+                                <input type="hidden" id="paciente_IdPaciente" name="paciente_IdPaciente" value="@Model.paciente_IdPaciente" />
                                 <input type="submit" class="btn btn-primary" value="Editar Exames" />
                             </div>
                         </div>
@@ -46,7 +46,7 @@
         <div class="col-md-7">
             <div class="form-horizontal">
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.HiddenFor(model => model.idProntuario)
+                @Html.HiddenFor(model => model.paciente_IdPaciente)
 
                 <div class="form-group">
                     @Html.LabelFor(model => model.procedimentos, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -82,5 +82,5 @@
 </div>
 <br />
 <div>
-    @Html.ActionLink("Voltar para buscar", "Buscar")
+    @Html.ActionLink("Voltar para buscar", "Buscar") | @Html.ActionLink("Deletar Prontuário", "Delete", new { id = Model.paciente_IdPaciente }, new { @class = "btn btn-danger"})
 </div>

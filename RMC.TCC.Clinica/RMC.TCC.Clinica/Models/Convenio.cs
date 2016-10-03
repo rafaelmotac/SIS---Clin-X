@@ -9,14 +9,9 @@ namespace RMC.TCC.Clinica.Models
     [Table("Convenio")]
     public partial class Convenio
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Convenio()
-        {
-            Paciente = new HashSet<Paciente>();
-        }
-
-        [Key]
-        public int idConvenio { get; set; }
+        
+        /*[Key]
+        public int idConvenio { get; set; }*/
 
         [Required]
         [StringLength(45)]
@@ -25,10 +20,12 @@ namespace RMC.TCC.Clinica.Models
         [Required]
         [StringLength(45)]
         public string nomeConvenio { get; set; }
-
+        
+        [Key, ForeignKey("Paciente")]
         public int paciente_IdPaciente { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Paciente> Paciente { get; set; }
+        public Paciente Paciente { get; set; }
+
+        
     }
 }

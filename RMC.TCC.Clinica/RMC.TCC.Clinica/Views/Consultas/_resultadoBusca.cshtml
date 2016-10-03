@@ -16,10 +16,7 @@
         </th>
         <th>
             Hora da Consulta
-        </th>
-        <th>
-           Data Fim da Consulta
-        </th>
+        </th>        
         <th></th>
     </tr>
 
@@ -35,11 +32,8 @@
             @Html.DisplayFor(modelItem => item.dtConsulta)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.horaInicioConsulta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dtFim)
-        </td>     
+            @Html.DisplayFor(modelItem => item.horaConsulta)
+        </td>          
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.idConsulta }) |
             @Html.ActionLink("Details", "Details", new { id=item.idConsulta }) |

@@ -22,26 +22,34 @@ namespace RMC.TCC.Clinica.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult resultadoBuscarProntuario(string cpf)
         {
+            Prontuario prontuario = (from p in db.Prontuario where p.Paciente.cpf.Equals(cpf) select p).FirstOrDefault();
 
-            var paciente = from p in db.Paciente where p.cpf.Equals(cpf) select p.idPaciente;
+            var paciente = from p in db.Paciente where p.cpf.Equals(cpf) select p;
 
             var resultado = from p in db.Prontuario
-                                   where p.paciente_IdPaciente == paciente.FirstOrDefault()
-                                   select p;
+                                    where p.paciente_IdPaciente == paciente.FirstOrDefault().idPaciente
+                                    select p;
+
+            if(paciente.FirstOrDefault() != null && resultado.FirstOrDefault() == null)
+            {
+                return PartialView("_prontuarioInexistente");
+            }
+
+            //Prontuario resultado = db.Prontuario.Find(idPaciente.FirstOrDefault());
 
             return PartialView("_resultadoBusca",resultado.FirstOrDefault());
         }
 
-        public ActionResult EditarExamesProntuario(int idProntuario)
+        public ActionResult EditarExamesProntuario(int prontuario_IdProntuario)
         {
-            Prontuario prontuario = db.Prontuario.Find(idProntuario);           
+            Prontuario prontuario = db.Prontuario.Find(prontuario_IdProntuario);           
 
             return View("Exames",prontuario);
         }
        
-        public ActionResult CadastrarExameProntuario(int idProntuario)
+        public ActionResult CadastrarExameProntuario(int prontuario_IdProntuario)
         {
-            Prontuario prontuario = db.Prontuario.Find(idProntuario);
+            Prontuario prontuario = db.Prontuario.Find(prontuario_IdProntuario);
 
             ViewBag.prontuario = prontuario;
 
@@ -84,12 +92,13 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idProntuario,procedimentos,prescricoes,paciente_IdPaciente,historico")] Prontuario prontuario)
+        public ActionResult Create([Bind(Include = "procedimentos,prescricoes,paciente_IdPaciente,historico")] Prontuario prontuario)
         {
             if (ModelState.IsValid)
             {
                 db.Prontuario.Add(prontuario);
                 db.SaveChanges();
+                ViewBag.prontuario = prontuario;
                 return PartialView("_resultadoCadastrar");
             }
             return PartialView("_resultadoCadastrar");
@@ -122,7 +131,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idProntuario,procedimentos,prescricoes,paciente_IdPaciente,historico")] Prontuario prontuario)
+        public ActionResult Edit([Bind(Include = "procedimentos,prescricoes,paciente_IdPaciente,historico")] Prontuario prontuario)
         {
             if (ModelState.IsValid)
             {
@@ -130,7 +139,7 @@ namespace RMC.TCC.Clinica.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome", prontuario.paciente_IdPaciente);
+            ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "paciente_IdPaciente", "nome", prontuario.paciente_IdPaciente);
             return View(prontuario);
         }
 

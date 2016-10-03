@@ -9,14 +9,9 @@ namespace RMC.TCC.Clinica.Models
     [Table("Prontuario")]
     public partial class Prontuario
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Prontuario()
-        {
-            Exame = new HashSet<Exame>();
-        }
 
-        [Key]
-        public int idProntuario { get; set; }
+        /*[Key]
+        public int idProntuario { get; set; }*/
 
         [Column(TypeName = "text")]
         public string procedimentos { get; set; }
@@ -24,11 +19,12 @@ namespace RMC.TCC.Clinica.Models
         [Column(TypeName = "text")]
         public string prescricoes { get; set; }
 
+        [Key,ForeignKey("Paciente")]
         public int paciente_IdPaciente { get; set; }
 
         [Column(TypeName = "text")]
         public string historico { get; set; }
-
+       
         public virtual Paciente Paciente { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

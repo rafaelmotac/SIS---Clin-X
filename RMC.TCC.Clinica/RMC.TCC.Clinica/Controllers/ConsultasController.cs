@@ -51,7 +51,7 @@ namespace RMC.TCC.Clinica.Controllers
         {
             var resultado = from c in db.Consulta
                             where c.profSaude_idProfSaude.Equals((
-                            from m in db.Medico where m.ProfSaude.cpf.Equals(cpf) select m.profSaude_idProfSaude).FirstOrDefault()) && c.dtConsulta.Equals(dataConsulta)
+                            from m in db.ProfSaude where m.cpf.Equals(cpf) select m.idProfSaude).FirstOrDefault()) && c.dtConsulta.Equals(dataConsulta)
                             select c;
 
             return PartialView("_resultadoBusca", resultado.ToList());
@@ -101,7 +101,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idConsulta,dtConsulta,dtFim,profSaude_idProfSaude,paciente_IdPaciente,horaInicioConsulta,horaFimConsulta")] Consulta consulta)
+        public ActionResult Create([Bind(Include = "idConsulta,dtConsulta,profSaude_idProfSaude,paciente_IdPaciente,horaConsulta")] Consulta consulta)
         {
             if (ModelState.IsValid)
             {
@@ -137,7 +137,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idConsulta,dtConsulta,dtFim,profSaude_idProfSaude,paciente_IdPaciente,horaInicioConsulta,horaFimConsulta")] Consulta consulta)
+        public ActionResult Edit([Bind(Include = "idConsulta,dtConsulta,profSaude_idProfSaude,paciente_IdPaciente,horaConsulta")] Consulta consulta)
         {
             if (ModelState.IsValid)
             {

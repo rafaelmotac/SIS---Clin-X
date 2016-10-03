@@ -19,8 +19,6 @@ namespace RMC.TCC.Clinica.Models
         public virtual DbSet<Paciente> Paciente { get; set; }
         public virtual DbSet<ProfSaude> ProfSaude { get; set; }
         public virtual DbSet<Prontuario> Prontuario { get; set; }
-        public virtual DbSet<Dentista> Dentista { get; set; }
-        public virtual DbSet<Medico> Medico { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -31,12 +29,6 @@ namespace RMC.TCC.Clinica.Models
             modelBuilder.Entity<Convenio>()
                 .Property(e => e.nomeConvenio)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Convenio>()
-                .HasMany(e => e.Paciente)
-                .WithOptional(e => e.Convenio)
-                .HasForeignKey(e => e.convenio_idConvenio)
-                .WillCascadeOnDelete();
 
             modelBuilder.Entity<Exame>()
                 .Property(e => e.nome)
@@ -79,15 +71,15 @@ namespace RMC.TCC.Clinica.Models
                 .Property(e => e.endereco)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<Paciente>()
-                .HasMany(e => e.Consulta)
-                .WithRequired(e => e.Paciente)
-                .HasForeignKey(e => e.paciente_IdPaciente);
+            //modelBuilder.Entity<Paciente>()
+              //  .HasMany(e => e.Consulta)
+                //.WithRequired(e => e.Paciente)
+                //.HasForeignKey(e => e.paciente_IdPaciente);
 
-            modelBuilder.Entity<Paciente>()
-                .HasMany(e => e.Prontuario)
-                .WithRequired(e => e.Paciente)
-                .HasForeignKey(e => e.paciente_IdPaciente);
+            //modelBuilder.Entity<Paciente>()
+            //.HasMany(e => e.Prontuario)
+            //.WithRequired(e => e.Paciente)
+            //.HasForeignKey(e => e.paciente_IdPaciente);
 
             modelBuilder.Entity<ProfSaude>()
                 .Property(e => e.nome)
@@ -107,18 +99,6 @@ namespace RMC.TCC.Clinica.Models
 
             modelBuilder.Entity<ProfSaude>()
                 .HasMany(e => e.Consulta)
-                .WithRequired(e => e.ProfSaude)
-                .HasForeignKey(e => e.profSaude_idProfSaude)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<ProfSaude>()
-                .HasMany(e => e.Dentista)
-                .WithRequired(e => e.ProfSaude)
-                .HasForeignKey(e => e.profSaude_IdProfSaude)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<ProfSaude>()
-                .HasMany(e => e.Medico)
                 .WithRequired(e => e.ProfSaude)
                 .HasForeignKey(e => e.profSaude_idProfSaude)
                 .WillCascadeOnDelete(false);

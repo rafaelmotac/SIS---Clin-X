@@ -27,7 +27,7 @@
         </table>
         @using (Html.BeginForm("CadastrarExameProntuario", "Prontuarios"))
         {
-            <input type="hidden" id="idProntuario" name="idProntuario" value="@Model.idProntuario" />
+            <input type="hidden" id="prontuario_IdProntuario" name="prontuario_IdProntuario" value="@Model.paciente_IdPaciente" />
             <input type="submit" class="btn btn-primary" value="Cadastrar Novo Exame" />
         }
     </div>

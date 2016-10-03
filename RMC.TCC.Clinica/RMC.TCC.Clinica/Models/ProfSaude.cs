@@ -12,9 +12,7 @@ namespace RMC.TCC.Clinica.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ProfSaude()
         {
-            Consulta = new HashSet<Consulta>();
-            Dentista = new HashSet<Dentista>();
-            Medico = new HashSet<Medico>();
+            Consulta = new List<Consulta>();                      
         }
 
         [Key]
@@ -26,6 +24,7 @@ namespace RMC.TCC.Clinica.Models
 
         [Required]
         [StringLength(255)]
+        [Index(IsUnique = true)]
         public string cpf { get; set; }
 
         [Required]
@@ -36,13 +35,11 @@ namespace RMC.TCC.Clinica.Models
         [StringLength(255)]
         public string endereco { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [Required]
+        [Index(IsUnique =true)]
+        public int crm { get; set; }
+    
         public virtual ICollection<Consulta> Consulta { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Dentista> Dentista { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Medico> Medico { get; set; }
+        
     }
 }

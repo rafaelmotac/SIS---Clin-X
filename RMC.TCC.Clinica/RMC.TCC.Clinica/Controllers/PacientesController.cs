@@ -84,7 +84,7 @@ namespace RMC.TCC.Clinica.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.convenio_idConvenio = new SelectList(db.Convenio, "idConvenio", "numConvenio", paciente.convenio_idConvenio);
+            //ViewBag.convenio_idConvenio = new SelectList(db.Convenio, "idConvenio", "numConvenio", paciente.convenio_idConvenio);
             return View(paciente);
         }
 
@@ -100,7 +100,7 @@ namespace RMC.TCC.Clinica.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.convenio_idConvenio = new SelectList(db.Convenio, "idConvenio", "numConvenio", paciente.convenio_idConvenio);
+            //ViewBag.convenio_idConvenio = new SelectList(db.Convenio, "idConvenio", "numConvenio", paciente.convenio_idConvenio);
             return View(paciente);
         }
 
@@ -117,7 +117,7 @@ namespace RMC.TCC.Clinica.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.convenio_idConvenio = new SelectList(db.Convenio, "idConvenio", "numConvenio", paciente.convenio_idConvenio);
+            //ViewBag.convenio_idConvenio = new SelectList(db.Convenio, "idConvenio", "numConvenio", paciente.convenio_idConvenio);
             return View(paciente);
         }
 

@@ -3,7 +3,7 @@
 @if (ViewBag.prontuario != null)
 {
     <h3>Paciente já possui um Prontuário !</h3>
-    @Html.ActionLink("Visualizar Prontuário", "Details", "Prontuarios", new { id = ViewBag.prontuario.idProntuario }, null)
+    @Html.ActionLink("Visualizar Prontuário", "Details", "Prontuarios", new { id = ViewBag.prontuario.paciente_IdPaciente}, null)
 }
 else if (Model == null)
 {

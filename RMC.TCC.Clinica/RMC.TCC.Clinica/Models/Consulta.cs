@@ -10,21 +10,24 @@ namespace RMC.TCC.Clinica.Models
     public partial class Consulta
     {
         [Key]
+        [Index("UQ_Consulta_Paciente", 1, IsUnique = true)]
+        [Index("UQ_Consulta_ProfSaude", 1, IsUnique = true)]
         public int idConsulta { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime dtConsulta { get; set; }
 
-        [Column(TypeName = "date")]
-        public DateTime? dtFim { get; set; }
-
+        [Index("UQ_Consulta_ProfSaude", 2, IsUnique = true)]
+        [Required]
+        [ForeignKey("ProfSaude")]
         public int profSaude_idProfSaude { get; set; }
 
+        [Index("UQ_Consulta_Paciente", 2, IsUnique = true)]
+        [Required]
+        [ForeignKey("Paciente")]
         public int paciente_IdPaciente { get; set; }
 
-        public TimeSpan horaInicioConsulta { get; set; }
-
-        public TimeSpan? horaFimConsulta { get; set; }
+        public TimeSpan horaConsulta { get; set; }
 
         public virtual Paciente Paciente { get; set; }
 

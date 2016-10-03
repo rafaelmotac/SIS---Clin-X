@@ -173,28 +173,29 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ConsultasController.cs" />
     <Compile Include="Controllers\ConveniosController.cs" />
-    <Compile Include="Controllers\DentistasController.cs" />
     <Compile Include="Controllers\ExamesController.cs" />
     <Compile Include="Controllers\FuncionariosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\MedicosController.cs" />
     <Compile Include="Controllers\PacientesController.cs" />
     <Compile Include="Controllers\ProfSaudesController.cs" />
     <Compile Include="Controllers\ProntuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610032335342_InitialCreate.cs" />
+    <Compile Include="Migrations\201610032335342_InitialCreate.Designer.cs">
+      <DependentUpon>201610032335342_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ClinicaDb.cs" />
     <Compile Include="Models\Consulta.cs" />
     <Compile Include="Models\Convenio.cs" />
-    <Compile Include="Models\Dentista.cs" />
     <Compile Include="Models\Exame.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\Medico.cs" />
     <Compile Include="Models\Paciente.cs" />
     <Compile Include="Models\ProfSaude.cs" />
     <Compile Include="Models\Prontuario.cs" />
@@ -288,21 +289,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Medicos\Create.cshtml" />
-    <Content Include="Views\Medicos\Delete.cshtml" />
-    <Content Include="Views\Medicos\Details.cshtml" />
-    <Content Include="Views\Medicos\Edit.cshtml" />
-    <Content Include="Views\Medicos\Index.cshtml" />
-    <Content Include="Views\ProfSaudes\Create.cshtml" />
-    <Content Include="Views\ProfSaudes\Delete.cshtml" />
-    <Content Include="Views\ProfSaudes\Details.cshtml" />
-    <Content Include="Views\ProfSaudes\Edit.cshtml" />
-    <Content Include="Views\ProfSaudes\Index.cshtml" />
-    <Content Include="Views\Dentistas\Create.cshtml" />
-    <Content Include="Views\Dentistas\Delete.cshtml" />
-    <Content Include="Views\Dentistas\Details.cshtml" />
-    <Content Include="Views\Dentistas\Edit.cshtml" />
-    <Content Include="Views\Dentistas\Index.cshtml" />
     <Content Include="Views\Exames\Create.cshtml" />
     <Content Include="Views\Exames\Delete.cshtml" />
     <Content Include="Views\Exames\Details.cshtml" />
@@ -345,6 +331,13 @@
     <Content Include="Views\Convenios\CadastrarConvenio.cshtml" />
     <Content Include="Views\Prontuarios\CadastrarExameProntuario.cshtml" />
     <Content Include="Views\Prontuarios\Exames.cshtml" />
+    <Content Include="Views\ProfSaudes\Create.cshtml" />
+    <Content Include="Views\ProfSaudes\Delete.cshtml" />
+    <Content Include="Views\ProfSaudes\Details.cshtml" />
+    <Content Include="Views\ProfSaudes\Edit.cshtml" />
+    <Content Include="Views\ProfSaudes\Index.cshtml" />
+    <Content Include="Views\Prontuarios\_prontuarioInexistente.cshtml" />
+    <Content Include="Views\Prontuarios\_resultadoCadastrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,6 +347,11 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.1.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.0.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610032335342_InitialCreate.resx">
+      <DependentUpon>201610032335342_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

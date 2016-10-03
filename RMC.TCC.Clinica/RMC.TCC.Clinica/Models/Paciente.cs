@@ -13,7 +13,6 @@ namespace RMC.TCC.Clinica.Models
         public Paciente()
         {
             Consulta = new HashSet<Consulta>();
-            Prontuario = new HashSet<Prontuario>();
         }
 
         [Key]
@@ -25,6 +24,7 @@ namespace RMC.TCC.Clinica.Models
 
         [Required]
         [StringLength(255)]
+        [Index(IsUnique =true)]
         public string cpf { get; set; }
 
         [Required]
@@ -36,16 +36,14 @@ namespace RMC.TCC.Clinica.Models
         public string endereco { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime dtNascimento { get; set; }
-
-        public int? convenio_idConvenio { get; set; }
+        public DateTime? dtNascimento { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consulta> Consulta { get; set; }
 
         public virtual Convenio Convenio { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Prontuario> Prontuario { get; set; }
+        public virtual Prontuario Prontuario { get; set; }
+
     }
 }

@@ -1,5 +1,5 @@
 ﻿@model RMC.TCC.Clinica.Models.Prontuario
-
+@if(Model != null) {
 <div class="row">
     <h3>Prontuario</h3>
     <hr />
@@ -38,6 +38,11 @@
     </div>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.idProntuario }) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.paciente_IdPaciente }) |
     @Html.ActionLink("Voltar para buscar", "Buscar")
 </p>
+}else
+{
+    <h4>Paciente Não Cadastrado</h4>
+    @Html.ActionLink("Cadastrar Paciente", "Create","Pacientes")
+}
