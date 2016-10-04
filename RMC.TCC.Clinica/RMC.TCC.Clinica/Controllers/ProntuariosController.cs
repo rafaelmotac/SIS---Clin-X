@@ -40,16 +40,16 @@ namespace RMC.TCC.Clinica.Controllers
             return PartialView("_resultadoBusca",resultado.FirstOrDefault());
         }
 
-        public ActionResult EditarExamesProntuario(int prontuario_IdProntuario)
+        public ActionResult EditarExamesProntuario(int paciente_IdPaciente)
         {
-            Prontuario prontuario = db.Prontuario.Find(prontuario_IdProntuario);           
+            Prontuario prontuario = db.Prontuario.Find(paciente_IdPaciente);           
 
             return View("Exames",prontuario);
         }
        
-        public ActionResult CadastrarExameProntuario(int prontuario_IdProntuario)
+        public ActionResult CadastrarExameProntuario(int paciente_IdPaciente)
         {
-            Prontuario prontuario = db.Prontuario.Find(prontuario_IdProntuario);
+            Prontuario prontuario = db.Prontuario.Find(paciente_IdPaciente);
 
             ViewBag.prontuario = prontuario;
 
