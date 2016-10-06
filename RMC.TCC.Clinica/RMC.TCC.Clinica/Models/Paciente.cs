@@ -31,11 +31,11 @@ namespace RMC.TCC.Clinica.Models
         [DisplayName("CPF")]
         public string cpf { get; set; }
 
-        [StringLength(11,ErrorMessage = "Telefone deve contar no máximo 12 caracteres")]
+        [StringLength(11,ErrorMessage = "Telefone deve conter no mínimo 7 caracteres e no máximo 12",MinimumLength = 7)]
         [DisplayName("Telefone")]
         public string telefone { get; set; }
 
-        [StringLength(255,ErrorMessage = "Endereço deve contar no máximo 255 caracteres")]
+        [StringLength(255,ErrorMessage = "Endereço deve conter no máximo 255 caracteres")]
         [DisplayName("Endereço")]
         public string endereco { get; set; }
 

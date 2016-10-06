@@ -27,7 +27,7 @@ namespace RMC.TCC.Clinica.Models
 
         [Required(ErrorMessage = "O campo Telefone é obrigatório")]
         [DisplayName("Telefone")]
-        [StringLength(11, ErrorMessage = "O campo Telefone deve conter no máximo 11 caracteres")]
+        [StringLength(11, ErrorMessage = "Telefone deve conter no mínimo 7 caracteres e no máximo 12", MinimumLength = 7)]
         public string telefone { get; set; }
 
         [Column(TypeName = "date")]
