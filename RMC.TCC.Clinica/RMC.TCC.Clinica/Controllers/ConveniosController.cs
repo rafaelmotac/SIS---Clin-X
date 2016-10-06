@@ -20,7 +20,17 @@ namespace RMC.TCC.Clinica.Controllers
 
             ViewBag.Paciente = paciente;
 
-            return View();
+            //Convenio convenio = db.Convenio.Find(idPaciente);
+
+            if(paciente.Convenio == null)
+            {
+                return View();
+            }else
+            {
+                return View("convenioExistente");
+            }
+
+            
         }
 
 
@@ -59,7 +69,9 @@ namespace RMC.TCC.Clinica.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(convenio);
+            ViewBag.Paciente = db.Paciente.Find(convenio.paciente_IdPaciente);
+
+            return View("CadastrarConvenio",convenio);
         }
 
         // GET: Convenios/Edit/5

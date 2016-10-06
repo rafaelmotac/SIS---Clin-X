@@ -249,5 +249,5 @@ C:\Users\b845922\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Deb
 C:\Users\b845922\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.csprojResolveAssemblyReference.cache
 C:\Users\b845922\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.Migrations.InitialCreate.resources
 C:\Users\b845922\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.csproj.GenerateResource.Cache
-C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.Migrations.InitialCreate.resources
-C:\Users\rafae\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.csproj.GenerateResource.Cache
+C:\Users\b845922\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.Migrations.AddDtNascimentoProfSaude.resources
+C:\Users\b845922\Source\Repos\SIS-Clin-X\RMC.TCC.Clinica\RMC.TCC.Clinica\obj\Debug\RMC.TCC.Clinica.Migrations.UniqueConvenio.resources

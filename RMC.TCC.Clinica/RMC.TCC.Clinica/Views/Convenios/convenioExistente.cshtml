@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Convênio Já Cadastrado";
+}
+
+<h2>@ViewBag.Paciente.nome | @ViewBag.Paciente.cpf</h2>
+<br />
+<h3>Paciente já posssui convênio cadastrado!</h3>
+<div>
+    @Html.ActionLink("Editar Convênio","Edit","Convenios", new { id = ViewBag.Paciente.idPaciente },null) |
+    @Html.ActionLink("Voltar Para Edição Paciente","Edit","Pacientes", new { id = ViewBag.Paciente.idPaciente }, null)
+</div>

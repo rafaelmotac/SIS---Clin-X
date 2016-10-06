@@ -46,7 +46,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idProfSaude,nome,cpf,telefone,endereco")] ProfSaude profSaude)
+        public ActionResult Create([Bind(Include = "idProfSaude,dtNascimento,nome,cpf,telefone,endereco")] ProfSaude profSaude)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idProfSaude,nome,cpf,telefone,endereco")] ProfSaude profSaude)
+        public ActionResult Edit([Bind(Include = "idProfSaude,dtNascimento,nome,cpf,telefone,endereco")] ProfSaude profSaude)
         {
             if (ModelState.IsValid)
             {

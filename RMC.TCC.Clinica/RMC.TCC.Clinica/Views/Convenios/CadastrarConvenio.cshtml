@@ -18,8 +18,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.numConvenio, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.numConvenio, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.numConvenio, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.numConvenio, new { htmlAttributes = new { @class = "form-control", @type = "number" } })
+                @Html.ValidationMessageFor(model => model.numConvenio, "", new { @class = "text-danger"})
             </div>
         </div>
 
@@ -32,8 +32,8 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-10">
-                <label class="control-label">Id Paciente</label>
+            <label class="control-label col-md-2">Id Paciente</label>
+            <div class="col-md-10">               
                 <input type="text" class="form-control" value="@ViewBag.Paciente.idPaciente" readonly name="paciente_IdPaciente" id="paciente_IdPaciente" />
             </div>
         </div>

@@ -29,9 +29,9 @@ namespace RMC.TCC.Clinica.Migrations
                     {
                         idPaciente = c.Int(nullable: false, identity: true),
                         nome = c.String(nullable: false, maxLength: 255, unicode: false),
-                        cpf = c.String(nullable: false, maxLength: 255, unicode: false),
-                        telefone = c.String(nullable: false, maxLength: 255, unicode: false),
-                        endereco = c.String(nullable: false, maxLength: 255, unicode: false),
+                        cpf = c.String(nullable: false, maxLength: 11, unicode: false),
+                        telefone = c.String(maxLength: 11, unicode: false),
+                        endereco = c.String(maxLength: 255, unicode: false),
                         dtNascimento = c.DateTime(storeType: "date"),
                     })
                 .PrimaryKey(t => t.idPaciente)
@@ -47,7 +47,8 @@ namespace RMC.TCC.Clinica.Migrations
                     })
                 .PrimaryKey(t => t.paciente_IdPaciente)
                 .ForeignKey("dbo.Paciente", t => t.paciente_IdPaciente)
-                .Index(t => t.paciente_IdPaciente);
+                .Index(t => t.paciente_IdPaciente)
+                .Index(t => new { t.numConvenio, t.nomeConvenio }, unique: true, name: "UQ_numConvenio_nomeConvenio");
             
             CreateTable(
                 "dbo.Prontuario",
@@ -77,11 +78,12 @@ namespace RMC.TCC.Clinica.Migrations
                 c => new
                     {
                         idProfSaude = c.Int(nullable: false, identity: true),
-                        nome = c.String(nullable: false, maxLength: 255, unicode: false),
-                        cpf = c.String(nullable: false, maxLength: 255, unicode: false),
-                        telefone = c.String(nullable: false, maxLength: 255, unicode: false),
+                        nome = c.String(nullable: false, maxLength: 45, unicode: false),
+                        cpf = c.String(nullable: false, maxLength: 11, unicode: false),
+                        telefone = c.String(nullable: false, maxLength: 11, unicode: false),
                         endereco = c.String(nullable: false, maxLength: 255, unicode: false),
                         crm = c.Int(nullable: false),
+                        dtNascimento = c.DateTime(nullable: false, storeType: "date"),
                     })
                 .PrimaryKey(t => t.idProfSaude)
                 .Index(t => t.cpf, unique: true)
@@ -93,11 +95,12 @@ namespace RMC.TCC.Clinica.Migrations
                     {
                         idFuncionario = c.Int(nullable: false, identity: true),
                         nome = c.String(nullable: false, maxLength: 45, unicode: false),
-                        cpf = c.String(nullable: false, maxLength: 45, unicode: false),
-                        telefone = c.String(nullable: false, maxLength: 45, unicode: false),
+                        cpf = c.String(nullable: false, maxLength: 11, unicode: false),
+                        telefone = c.String(nullable: false, maxLength: 11, unicode: false),
                         dtNascimento = c.DateTime(nullable: false, storeType: "date"),
                     })
-                .PrimaryKey(t => t.idFuncionario);
+                .PrimaryKey(t => t.idFuncionario)
+                .Index(t => t.cpf, unique: true);
             
             CreateTable(
                 "dbo.Prontuario_has_Exame",
@@ -124,9 +127,11 @@ namespace RMC.TCC.Clinica.Migrations
             DropForeignKey("dbo.Convenio", "paciente_IdPaciente", "dbo.Paciente");
             DropIndex("dbo.Prontuario_has_Exame", new[] { "prontuario_IdProntuario" });
             DropIndex("dbo.Prontuario_has_Exame", new[] { "exame_idExame" });
+            DropIndex("dbo.Funcionario", new[] { "cpf" });
             DropIndex("dbo.ProfSaude", new[] { "crm" });
             DropIndex("dbo.ProfSaude", new[] { "cpf" });
             DropIndex("dbo.Prontuario", new[] { "paciente_IdPaciente" });
+            DropIndex("dbo.Convenio", "UQ_numConvenio_nomeConvenio");
             DropIndex("dbo.Convenio", new[] { "paciente_IdPaciente" });
             DropIndex("dbo.Paciente", new[] { "cpf" });
             DropIndex("dbo.Consulta", "UQ_Consulta_ProfSaude");

@@ -13,7 +13,7 @@ namespace RMC.TCC.Clinica.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201610032335342_InitialCreate"; }
+            get { return "201610060050488_InitialCreate"; }
         }
         
         string IMigrationMetadata.Source

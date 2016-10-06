@@ -1,10 +1,11 @@
 ﻿@model RMC.TCC.Clinica.Models.Convenio
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Convênio";
 }
 
-<h2>Edit</h2>
+<h2>Editar Convênio</h2>
+<h3>@Model.Paciente.nome | @Model.Paciente.cpf</h3>
 
 @using (Html.BeginForm())
 {

@@ -183,9 +183,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610032335342_InitialCreate.cs" />
-    <Compile Include="Migrations\201610032335342_InitialCreate.Designer.cs">
-      <DependentUpon>201610032335342_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201610060050488_InitialCreate.cs" />
+    <Compile Include="Migrations\201610060050488_InitialCreate.Designer.cs">
+      <DependentUpon>201610060050488_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -338,6 +338,7 @@
     <Content Include="Views\ProfSaudes\Index.cshtml" />
     <Content Include="Views\Prontuarios\_prontuarioInexistente.cshtml" />
     <Content Include="Views\Prontuarios\_resultadoCadastrar.cshtml" />
+    <Content Include="Views\Convenios\convenioExistente.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -349,8 +350,8 @@
     <Content Include="Scripts\jquery-3.1.0.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610032335342_InitialCreate.resx">
-      <DependentUpon>201610032335342_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610060050488_InitialCreate.resx">
+      <DependentUpon>201610060050488_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

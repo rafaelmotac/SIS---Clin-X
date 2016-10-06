@@ -26,7 +26,7 @@
             @Html.LabelFor(model => model.cpf, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cpf, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.cpf, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.cpf, "", new { @class = "text-danger" , @type="number" })
             </div>
         </div>
 
@@ -45,15 +45,22 @@
                 @Html.ValidationMessageFor(model => model.endereco, "", new { @class = "text-danger" })
             </div>
         </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.dtNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dtNascimento, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
+                @Html.ValidationMessageFor(model => model.dtNascimento,"", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Cadastrar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar para listagem", "Index")
 </div>

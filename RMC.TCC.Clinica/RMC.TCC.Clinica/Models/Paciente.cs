@@ -2,6 +2,7 @@ namespace RMC.TCC.Clinica.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -16,26 +17,30 @@ namespace RMC.TCC.Clinica.Models
         }
 
         [Key]
+        [DisplayName("ID Paciente")]
         public int idPaciente { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "O campo Nome é obrigatório")]
         [StringLength(255)]
+        [DisplayName("Nome")]
         public string nome { get; set; }
 
-        [Required]
-        [StringLength(255)]
+        [Required(ErrorMessage = "O campo CPF é obrigatório")]
+        [StringLength(11,ErrorMessage = "CPF deve conter no máxmimo 11 caracteres")]
         [Index(IsUnique =true)]
+        [DisplayName("CPF")]
         public string cpf { get; set; }
 
-        [Required]
-        [StringLength(255)]
+        [StringLength(11,ErrorMessage = "Telefone deve contar no máximo 12 caracteres")]
+        [DisplayName("Telefone")]
         public string telefone { get; set; }
 
-        [Required]
-        [StringLength(255)]
+        [StringLength(255,ErrorMessage = "Endereço deve contar no máximo 255 caracteres")]
+        [DisplayName("Endereço")]
         public string endereco { get; set; }
 
         [Column(TypeName = "date")]
+        [DisplayName("Data de Nascimento")]
         public DateTime? dtNascimento { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
