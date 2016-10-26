@@ -20,7 +20,7 @@ namespace RMC.TCC.Clinica.Models
         public int idProfSaude { get; set; }
 
         [Required(ErrorMessage = "O campo Nome é obrigatório")]
-        [DisplayName("Nome")]
+        [DisplayName("Nome Prof.Saude")]
         [StringLength(45,ErrorMessage = "O campo Nome deve conter no máximo 45 caracteres")]
         public string nome { get; set; }
 
@@ -42,12 +42,14 @@ namespace RMC.TCC.Clinica.Models
 
         [Required(ErrorMessage = "O campo CRM é obrigatório")]
         [DisplayName("CRM")]
+        [Range(4,9999999999)]
         [Index(IsUnique =true)]
         public int crm { get; set; }
 
         [Column(TypeName = "date")]
         [DisplayName("Data de Nascimento")]
         [Required(ErrorMessage = "O campo Data de Nascimento é obrigatório")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime dtNascimento { get; set; }
     
         public virtual ICollection<Consulta> Consulta { get; set; }

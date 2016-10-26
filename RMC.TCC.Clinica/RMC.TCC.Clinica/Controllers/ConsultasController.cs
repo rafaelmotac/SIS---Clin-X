@@ -10,6 +10,7 @@ using RMC.TCC.Clinica.Models;
 
 namespace RMC.TCC.Clinica.Controllers
 {
+    [Authorize(Roles = "Admin,Funcionario")]
     public class ConsultasController : Controller
     {
         private ClinicaDb db = new ClinicaDb();
@@ -105,9 +106,35 @@ namespace RMC.TCC.Clinica.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Consulta.Add(consulta);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+
+                Consulta verificaPaciente = (from c in db.Consulta
+                                    where (c.dtConsulta.Equals(consulta.dtConsulta)) && (c.horaConsulta.Equals(consulta.horaConsulta))
+                                     && (c.paciente_IdPaciente.Equals(consulta.paciente_IdPaciente))
+                                    select c).FirstOrDefault();
+
+                Consulta verificaProfSaude = (from c in db.Consulta
+                                             where (c.dtConsulta.Equals(consulta.dtConsulta)) && (c.horaConsulta.Equals(consulta.horaConsulta))
+                                              && (c.profSaude_idProfSaude.Equals(consulta.profSaude_idProfSaude))
+                                             select c).FirstOrDefault();
+
+                if(verificaPaciente == null)
+                {
+                    if(verificaProfSaude == null)
+                    {
+                        db.Consulta.Add(consulta);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                    ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome", consulta.paciente_IdPaciente);
+                    ViewBag.profSaude_idProfSaude = new SelectList(db.ProfSaude, "idProfSaude", "nome", consulta.profSaude_idProfSaude);
+                    ModelState.AddModelError("profSaude_idProfSaude", "Prof.Saude já possui uma consulta nesse mesmo dia e horário!");
+                    return View(consulta);
+                }
+                ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome", consulta.paciente_IdPaciente);
+                ViewBag.profSaude_idProfSaude = new SelectList(db.ProfSaude, "idProfSaude", "nome", consulta.profSaude_idProfSaude);
+                ModelState.AddModelError("paciente_IdPaciente", "Paciente já possui uma consulta nesse mesmo dia e horário!");
+                return View(consulta);
+
             }
 
             ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome", consulta.paciente_IdPaciente);

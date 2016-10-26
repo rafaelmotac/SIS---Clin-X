@@ -10,10 +10,12 @@ using RMC.TCC.Clinica.Models;
 
 namespace RMC.TCC.Clinica.Controllers
 {
+    [Authorize]
     public class PacientesController : Controller
     {
         private ClinicaDb db = new ClinicaDb();
 
+        [Authorize(Roles = "Admin,Prof.Saude,Funcionario")]
         // GET: Pacientes
         public ActionResult Index()
         {
@@ -21,7 +23,7 @@ namespace RMC.TCC.Clinica.Controllers
             return View(paciente.ToList());
         }
         
-        
+        [Authorize(Roles = "Admin,Prof.Saude,Funcionario")]
         public ActionResult BuscarPaciente(string cpf)
         {
             Paciente paciente = (from p in db.Paciente where p.cpf.Equals(cpf) select p).FirstOrDefault();
@@ -48,6 +50,7 @@ namespace RMC.TCC.Clinica.Controllers
            
         }
 
+        [Authorize(Roles = "Admin,Prof.Saude,Funcionario")]
         // GET: Pacientes/Details/5
         public ActionResult Details(int? id)
         {
@@ -63,6 +66,7 @@ namespace RMC.TCC.Clinica.Controllers
             return View(paciente);
         }
 
+        [Authorize(Roles = "Admin,Funcionario")]
         // GET: Pacientes/Create
         public ActionResult Create()
         {
@@ -73,6 +77,7 @@ namespace RMC.TCC.Clinica.Controllers
         // POST: Pacientes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin,Funcionario")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "idPaciente,nome,cpf,telefone,endereco,dtNascimento,convenio_idConvenio")] Paciente paciente)
@@ -88,6 +93,7 @@ namespace RMC.TCC.Clinica.Controllers
             return View(paciente);
         }
 
+        [Authorize(Roles = "Admin,Funcionario")]
         // GET: Pacientes/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -104,9 +110,11 @@ namespace RMC.TCC.Clinica.Controllers
             return View(paciente);
         }
 
+
         // POST: Pacientes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin,Funcionario")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "idPaciente,nome,cpf,telefone,endereco,dtNascimento,convenio_idConvenio")] Paciente paciente)
@@ -122,6 +130,7 @@ namespace RMC.TCC.Clinica.Controllers
         }
 
         // GET: Pacientes/Delete/5
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -136,9 +145,11 @@ namespace RMC.TCC.Clinica.Controllers
             return View(paciente);
         }
 
+
         // POST: Pacientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult DeleteConfirmed(int id)
         {
             Paciente paciente = db.Paciente.Find(id);

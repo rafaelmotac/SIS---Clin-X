@@ -171,6 +171,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\ConsultasController.cs" />
     <Compile Include="Controllers\ConveniosController.cs" />
     <Compile Include="Controllers\ExamesController.cs" />
@@ -180,12 +181,17 @@
     <Compile Include="Controllers\PacientesController.cs" />
     <Compile Include="Controllers\ProfSaudesController.cs" />
     <Compile Include="Controllers\ProntuariosController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201610060050488_InitialCreate.cs" />
     <Compile Include="Migrations\201610060050488_InitialCreate.Designer.cs">
       <DependentUpon>201610060050488_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610261410337_ChangeIndexConsulta.cs" />
+    <Compile Include="Migrations\201610261410337_ChangeIndexConsulta.Designer.cs">
+      <DependentUpon>201610261410337_ChangeIndexConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -339,6 +345,9 @@
     <Content Include="Views\Prontuarios\_prontuarioInexistente.cshtml" />
     <Content Include="Views\Prontuarios\_resultadoCadastrar.cshtml" />
     <Content Include="Views\Convenios\convenioExistente.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Auth\Acesso.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -352,6 +361,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610060050488_InitialCreate.resx">
       <DependentUpon>201610060050488_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610261410337_ChangeIndexConsulta.resx">
+      <DependentUpon>201610261410337_ChangeIndexConsulta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

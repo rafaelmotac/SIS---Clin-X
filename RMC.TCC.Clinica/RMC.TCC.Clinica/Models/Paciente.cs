@@ -22,7 +22,7 @@ namespace RMC.TCC.Clinica.Models
 
         [Required(ErrorMessage = "O campo Nome é obrigatório")]
         [StringLength(255)]
-        [DisplayName("Nome")]
+        [DisplayName("Nome Paciente")]
         public string nome { get; set; }
 
         [Required(ErrorMessage = "O campo CPF é obrigatório")]
@@ -41,6 +41,7 @@ namespace RMC.TCC.Clinica.Models
 
         [Column(TypeName = "date")]
         [DisplayName("Data de Nascimento")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? dtNascimento { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

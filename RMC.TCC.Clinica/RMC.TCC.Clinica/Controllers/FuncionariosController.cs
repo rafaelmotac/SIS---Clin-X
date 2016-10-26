@@ -10,6 +10,7 @@ using RMC.TCC.Clinica.Models;
 
 namespace RMC.TCC.Clinica.Controllers
 {
+    [Authorize(Roles = "Admin,Manager")]
     public class FuncionariosController : Controller
     {
         private ClinicaDb db = new ClinicaDb();

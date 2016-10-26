@@ -10,6 +10,7 @@ using RMC.TCC.Clinica.Models;
 
 namespace RMC.TCC.Clinica.Controllers
 {
+    [Authorize(Roles = "Admin,Manager")]
     public class ProfSaudesController : Controller
     {
         private ClinicaDb db = new ClinicaDb();
@@ -46,7 +47,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idProfSaude,dtNascimento,nome,cpf,telefone,endereco")] ProfSaude profSaude)
+        public ActionResult Create([Bind(Include = "idProfSaude,dtNascimento,nome,cpf,telefone,endereco,crm")] ProfSaude profSaude)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +79,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idProfSaude,dtNascimento,nome,cpf,telefone,endereco")] ProfSaude profSaude)
+        public ActionResult Edit([Bind(Include = "idProfSaude,dtNascimento,nome,cpf,telefone,endereco,crm")] ProfSaude profSaude)
         {
             if (ModelState.IsValid)
             {

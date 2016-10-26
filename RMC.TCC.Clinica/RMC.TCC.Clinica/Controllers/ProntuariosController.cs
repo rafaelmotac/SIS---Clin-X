@@ -9,16 +9,18 @@ using System.Web.Mvc;
 using RMC.TCC.Clinica.Models;
 
 namespace RMC.TCC.Clinica.Controllers
-{
+{   
+    [Authorize]
     public class ProntuariosController : Controller
     {
         private ClinicaDb db = new ClinicaDb();
 
+        [Authorize(Roles = "Prof.Saude,Admin")]
         public ActionResult Buscar()
         {
             return View();
         }
-
+        [Authorize(Roles = "Prof.Saude,Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult resultadoBuscarProntuario(string cpf)
         {
@@ -40,13 +42,15 @@ namespace RMC.TCC.Clinica.Controllers
             return PartialView("_resultadoBusca",resultado.FirstOrDefault());
         }
 
+        [Authorize(Roles = "Prof.Saude,Admin")]
         public ActionResult EditarExamesProntuario(int paciente_IdPaciente)
         {
             Prontuario prontuario = db.Prontuario.Find(paciente_IdPaciente);           
 
             return View("Exames",prontuario);
         }
-       
+
+        [Authorize(Roles = "Prof.Saude,Admin")]
         public ActionResult CadastrarExameProntuario(int paciente_IdPaciente)
         {
             Prontuario prontuario = db.Prontuario.Find(paciente_IdPaciente);
@@ -61,12 +65,14 @@ namespace RMC.TCC.Clinica.Controllers
         }
 
         // GET: Prontuarios
+        [Authorize(Roles = "Prof.Saude,Admin")]
         public ActionResult Index()
         {
             return View("Buscar");
         }
 
         // GET: Prontuarios/Details/5
+        [Authorize(Roles = "Prof.Saude,Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -81,6 +87,7 @@ namespace RMC.TCC.Clinica.Controllers
             return View(prontuario);
         }
 
+        [Authorize(Roles = "Admin,Prof.Saude,Funcionario")]
         // GET: Prontuarios/Create
         public ActionResult Cadastrar()
         {
@@ -90,6 +97,7 @@ namespace RMC.TCC.Clinica.Controllers
         // POST: Prontuarios/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize(Roles = "Admin,Prof.Saude,Funcionario")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "procedimentos,prescricoes,paciente_IdPaciente,historico")] Prontuario prontuario)
@@ -104,6 +112,7 @@ namespace RMC.TCC.Clinica.Controllers
             return PartialView("_resultadoCadastrar");
         }
 
+        [Authorize(Roles = "Prof.Saude,Admin")]
         // GET: Prontuarios/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -131,6 +140,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Prof.Saude,Admin")]
         public ActionResult Edit([Bind(Include = "procedimentos,prescricoes,paciente_IdPaciente,historico")] Prontuario prontuario)
         {
             if (ModelState.IsValid)
@@ -143,6 +153,7 @@ namespace RMC.TCC.Clinica.Controllers
             return View(prontuario);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Prontuarios/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -161,6 +172,7 @@ namespace RMC.TCC.Clinica.Controllers
         // POST: Prontuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Prontuario prontuario = db.Prontuario.Find(id);

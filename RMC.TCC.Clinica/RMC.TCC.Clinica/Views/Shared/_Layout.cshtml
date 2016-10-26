@@ -25,9 +25,19 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" id="consultaDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Info
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="consultaDropDown">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Sobre", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Criar Perfil","Index","Role")</li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" id="consultaDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Consulta
