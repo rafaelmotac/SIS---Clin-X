@@ -11,7 +11,10 @@ namespace RMC.TCC.Clinica
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                        "~/Scripts/jquery.validate*",
+                        "~/Scripts/jquery.validate.min.js",
+                        "~/Scripts/jquery.validate.unobtrusive.min.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryUn").Include(
                         "~/Scripts/jquery.unobtrusive-ajax.js"));

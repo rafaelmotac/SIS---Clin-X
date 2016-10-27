@@ -6,6 +6,7 @@ namespace RMC.TCC.Clinica.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("Consulta")]
     public partial class Consulta
@@ -19,17 +20,19 @@ namespace RMC.TCC.Clinica.Models
         [Column(TypeName = "date")]
         [DisplayName("Data da Consulta")]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
-        [Required(ErrorMessage = "O campo Data de Consulta é obrigatório")]
+        [DataType(DataType.Date)]
+        [Required(ErrorMessage = "O campo Data da Consulta é obrigatório")]
         public DateTime dtConsulta { get; set; }
 
         [Index("UQ_Consulta_ProfSaude", 2, IsUnique = true)]
-        [Required]
+        [Required(ErrorMessage = "O campo Prof.Saude é obrigatório")]
         [ForeignKey("ProfSaude")]
         [Display(Name = "Prof.Saude")]
+        [Remote("verificaConsulta", "Consultas", "profSaude_idProfSaude", AdditionalFields = "dtConsulta,horaConsulta,paciente_IdPaciente,idConsulta", ErrorMessage = "ProfSaude Possui consulta")]
         public int profSaude_idProfSaude { get; set; }
 
         [Index("UQ_Consulta_Paciente", 2, IsUnique = true)]
-        [Required]
+        [Required(ErrorMessage = "O Campo Paciente é obrigatório")]
         [ForeignKey("Paciente")]
         [Display(Name = "Paciente")]
         public int paciente_IdPaciente { get; set; }

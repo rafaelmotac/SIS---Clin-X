@@ -15,6 +15,34 @@ namespace RMC.TCC.Clinica.Controllers
     {
         private ClinicaDb db = new ClinicaDb();
 
+        public ActionResult verificaConsulta(int profSaude_idProfSaude, int paciente_IdPaciente, TimeSpan horaConsulta,DateTime dtConsulta)
+        {
+            Consulta verificaPaciente = (from c in db.Consulta
+                                         where (c.dtConsulta.Equals(dtConsulta)) && (c.horaConsulta.Equals(horaConsulta))
+                                          && (c.paciente_IdPaciente.Equals(paciente_IdPaciente))
+                                         select c).FirstOrDefault();
+
+            Consulta verificaProfSaude = (from c in db.Consulta
+                                          where (c.dtConsulta.Equals(dtConsulta)) && (c.horaConsulta.Equals(horaConsulta))
+                                           && (c.profSaude_idProfSaude.Equals(profSaude_idProfSaude))
+                                          select c).FirstOrDefault();
+
+            if(verificaPaciente != null && verificaProfSaude != null)
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+
+            if (verificaPaciente == null)
+            {
+                if(verificaProfSaude == null)
+                {
+                    return Json(true, JsonRequestBehavior.AllowGet);
+                }     
+            }
+
+            return Json(false, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult Buscar()
         {
             return View();
@@ -117,9 +145,18 @@ namespace RMC.TCC.Clinica.Controllers
                                               && (c.profSaude_idProfSaude.Equals(consulta.profSaude_idProfSaude))
                                              select c).FirstOrDefault();
 
-                if(verificaPaciente == null)
+                if(verificaPaciente != null && verificaProfSaude != null)
                 {
-                    if(verificaProfSaude == null)
+                    ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome", consulta.paciente_IdPaciente);
+                    ViewBag.profSaude_idProfSaude = new SelectList(db.ProfSaude, "idProfSaude", "nome", consulta.profSaude_idProfSaude);
+                    ModelState.AddModelError("paciente_IdPaciente", "Paciente já possui uma consulta nesse mesmo dia e horário!");
+                    ModelState.AddModelError("profSaude_idProfSaude", "Prof.Saude já possui uma consulta nesse mesmo dia e horário!");
+                    return View(consulta);
+
+                }
+                if (verificaPaciente == null)
+                {
+                    if (verificaProfSaude == null)
                     {
                         db.Consulta.Add(consulta);
                         db.SaveChanges();
@@ -168,9 +205,42 @@ namespace RMC.TCC.Clinica.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(consulta).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                Consulta verificaPaciente = (from c in db.Consulta
+                                             where (c.dtConsulta.Equals(consulta.dtConsulta)) && (c.horaConsulta.Equals(consulta.horaConsulta))
+                                              && (c.paciente_IdPaciente.Equals(consulta.paciente_IdPaciente))
+                                             select c).FirstOrDefault();
+
+                Consulta verificaProfSaude = (from c in db.Consulta
+                                              where (c.dtConsulta.Equals(consulta.dtConsulta)) && (c.horaConsulta.Equals(consulta.horaConsulta))
+                                               && (c.profSaude_idProfSaude.Equals(consulta.profSaude_idProfSaude))
+                                              select c).FirstOrDefault();
+
+                if (verificaPaciente != null && verificaProfSaude != null)
+                {
+                    ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome", consulta.paciente_IdPaciente);
+                    ViewBag.profSaude_idProfSaude = new SelectList(db.ProfSaude, "idProfSaude", "nome", consulta.profSaude_idProfSaude);
+                    ModelState.AddModelError("paciente_IdPaciente", "Paciente já possui uma consulta nesse mesmo dia e horário!");
+                    ModelState.AddModelError("profSaude_idProfSaude", "Prof.Saude já possui uma consulta nesse mesmo dia e horário!");
+                    return View(consulta);
+
+                }
+                if (verificaPaciente == null)
+                {
+                    if (verificaProfSaude == null)
+                    {
+                        db.Entry(consulta).State = EntityState.Modified;
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+                    ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome", consulta.paciente_IdPaciente);
+                    ViewBag.profSaude_idProfSaude = new SelectList(db.ProfSaude, "idProfSaude", "nome", consulta.profSaude_idProfSaude);
+                    ModelState.AddModelError("profSaude_idProfSaude", "Prof.Saude já possui uma consulta nesse mesmo dia e horário!");
+                    return View(consulta);
+                }
+                ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome", consulta.paciente_IdPaciente);
+                ViewBag.profSaude_idProfSaude = new SelectList(db.ProfSaude, "idProfSaude", "nome", consulta.profSaude_idProfSaude);
+                ModelState.AddModelError("paciente_IdPaciente", "Paciente já possui uma consulta nesse mesmo dia e horário!");
+                return View(consulta);
             }
             ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome", consulta.paciente_IdPaciente);
             ViewBag.profSaude_idProfSaude = new SelectList(db.ProfSaude, "idProfSaude", "nome", consulta.profSaude_idProfSaude);
