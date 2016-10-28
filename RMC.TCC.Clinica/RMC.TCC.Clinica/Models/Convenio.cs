@@ -30,7 +30,7 @@ namespace RMC.TCC.Clinica.Models
         [DisplayName("ID Paciente")]
         public int paciente_IdPaciente { get; set; }
 
-        public Paciente Paciente { get; set; }
+        public virtual Paciente Paciente { get; set; }
 
         
     }

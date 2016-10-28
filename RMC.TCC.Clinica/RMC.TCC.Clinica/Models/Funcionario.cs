@@ -6,6 +6,7 @@ namespace RMC.TCC.Clinica.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("Funcionario")]
     public partial class Funcionario
@@ -23,6 +24,7 @@ namespace RMC.TCC.Clinica.Models
         [DisplayName("CPF")]
         [StringLength(11, ErrorMessage = "O campo CPF deve conter no máximo 11 caracteres")]
         [Index(IsUnique = true)]
+        [Remote("verificaCpf", "Funcionarios", "cpf", AdditionalFields = "idFuncionario", ErrorMessage = "CPF já existe no banco de dados!")]
         public string cpf { get; set; }
 
         [Required(ErrorMessage = "O campo Telefone é obrigatório")]

@@ -15,6 +15,42 @@ namespace RMC.TCC.Clinica.Controllers
     {
         private ClinicaDb db = new ClinicaDb();
 
+        public ActionResult verificaCpf(string cpf, int? idProfSaude)
+        {
+            var cpfExiste = (from p in db.ProfSaude where p.cpf.Equals(cpf) select p).FirstOrDefault();
+            if (cpfExiste == null)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+
+            }
+            else if (cpfExiste.idProfSaude == idProfSaude)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        public ActionResult verificaCrm(string crm, int? idProfSaude)
+        {
+            var crmExiste = (from p in db.ProfSaude where p.crm.Equals(crm) select p).FirstOrDefault();
+            if (crmExiste == null)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+
+            }
+            else if (crmExiste.idProfSaude == idProfSaude)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         // GET: ProfSaudes
         public ActionResult Index()
         {

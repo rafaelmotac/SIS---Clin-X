@@ -6,6 +6,7 @@ namespace RMC.TCC.Clinica.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("ProfSaude")]
     public partial class ProfSaude
@@ -28,6 +29,7 @@ namespace RMC.TCC.Clinica.Models
         [DisplayName("CPF")]
         [StringLength(11,ErrorMessage = "O campo CPF deve conter no máximo 11 caracteres")]
         [Index(IsUnique = true)]
+        [Remote("verificaCpf", "ProfSaudes", "cpf", AdditionalFields = "idProfSaude", ErrorMessage = "CPF já existe no banco de dados!")]
         public string cpf { get; set; }
 
         [Required(ErrorMessage = "O campo Telefone é obrigatório")]
@@ -44,6 +46,7 @@ namespace RMC.TCC.Clinica.Models
         [DisplayName("CRM")]
         [Range(4,9999999999)]
         [Index(IsUnique =true)]
+        [Remote("verificaCrm", "ProfSaudes", "crm", AdditionalFields = "idProfSaude", ErrorMessage = "CRM já existe no banco de dados!")]
         public int crm { get; set; }
 
         [Column(TypeName = "date")]

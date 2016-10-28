@@ -15,6 +15,24 @@ namespace RMC.TCC.Clinica.Controllers
     {
         private ClinicaDb db = new ClinicaDb();
 
+        public ActionResult verificaCpf(string cpf, int? idFuncionario)
+        {
+            var cpfExiste = (from p in db.Funcionario where p.cpf.Equals(cpf) select p).FirstOrDefault();
+            if (cpfExiste == null)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+
+            }
+            else if (cpfExiste.idFuncionario == idFuncionario)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         // GET: Funcionarios
         public ActionResult Index()
         {
