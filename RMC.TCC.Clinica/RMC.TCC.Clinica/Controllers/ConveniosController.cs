@@ -15,6 +15,24 @@ namespace RMC.TCC.Clinica.Controllers
     {
         private ClinicaDb db = new ClinicaDb();
 
+        public ActionResult verificaConvenio(string numConvenio, string nomeConvenio ,int? paciente_IdPaciente)
+        {
+            var convenioExiste = (from p in db.Convenio where p.numConvenio.Equals(numConvenio) && p.nomeConvenio.Equals(nomeConvenio) select p ).FirstOrDefault();
+            if (convenioExiste == null)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+
+            }
+            else if (convenioExiste.paciente_IdPaciente == paciente_IdPaciente)
+            {
+                return Json(true, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(false, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public ActionResult CadastrarConvenio(int idPaciente)
         {
             Paciente paciente = db.Paciente.Find(idPaciente);
@@ -95,7 +113,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "numConvenio,nomeConvenio")] Convenio convenio)
+        public ActionResult Edit([Bind(Include = "paciente_IdPaciente,numConvenio,nomeConvenio")] Convenio convenio)
         {
             if (ModelState.IsValid)
             {

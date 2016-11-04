@@ -33,7 +33,7 @@ namespace RMC.TCC.Clinica.Controllers
             }
         }
 
-        public ActionResult verificaCrm(string crm, int? idProfSaude)
+        public ActionResult verificaCrm(int crm, int? idProfSaude)
         {
             var crmExiste = (from p in db.ProfSaude where p.crm.Equals(crm) select p).FirstOrDefault();
             if (crmExiste == null)

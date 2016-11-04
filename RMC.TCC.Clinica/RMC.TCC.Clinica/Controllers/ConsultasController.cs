@@ -10,7 +10,7 @@ using RMC.TCC.Clinica.Models;
 
 namespace RMC.TCC.Clinica.Controllers
 {
-    [Authorize(Roles = "Admin,Funcionario")]
+    [Authorize]
     public class ConsultasController : Controller
     {
         private ClinicaDb db = new ClinicaDb();
@@ -43,26 +43,31 @@ namespace RMC.TCC.Clinica.Controllers
             return Json(false, JsonRequestBehavior.AllowGet);
         }
 
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult Buscar()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult BuscarPorPaciente()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin,Funcionario,Prof.Saude")]
         public ActionResult BuscarPorMedico()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult BuscarPorDia()
         {
             return View();
         }
 
+        [Authorize(Roles = "Admin,Funcionario")]
         [ValidateAntiForgeryToken]
         public ActionResult resultadoBuscaPaciente(string cpf, DateTime dataConsulta)
         {
@@ -75,6 +80,7 @@ namespace RMC.TCC.Clinica.Controllers
             return PartialView("_resultadoBusca", resultado.ToList());
         }
 
+        [Authorize(Roles = "Admin,Funcionario,Prof.Saude")]
         [ValidateAntiForgeryToken]
         public ActionResult resultadoBuscaMedico(string cpf, DateTime dataConsulta)
         {
@@ -87,6 +93,7 @@ namespace RMC.TCC.Clinica.Controllers
 
         }
 
+        [Authorize(Roles = "Admin,Funcionario")]
         [ValidateAntiForgeryToken]
         public ActionResult resultadoBuscaDia(DateTime dataConsulta)
         {
@@ -95,7 +102,9 @@ namespace RMC.TCC.Clinica.Controllers
             return PartialView("_resultadoBusca", resultado.ToList());
         }
 
+
         // GET: Consultas
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult Index()
         {
             var consulta = db.Consulta.Include(c => c.Paciente).Include(c => c.ProfSaude);
@@ -103,6 +112,7 @@ namespace RMC.TCC.Clinica.Controllers
         }
 
         // GET: Consultas/Details/5
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -118,6 +128,7 @@ namespace RMC.TCC.Clinica.Controllers
         }
 
         // GET: Consultas/Create
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult Create()
         {
             ViewBag.paciente_IdPaciente = new SelectList(db.Paciente, "idPaciente", "nome");
@@ -130,6 +141,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult Create([Bind(Include = "idConsulta,dtConsulta,profSaude_idProfSaude,paciente_IdPaciente,horaConsulta")] Consulta consulta)
         {
             if (ModelState.IsValid)
@@ -180,6 +192,7 @@ namespace RMC.TCC.Clinica.Controllers
         }
 
         // GET: Consultas/Edit/5
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -201,6 +214,7 @@ namespace RMC.TCC.Clinica.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult Edit([Bind(Include = "idConsulta,dtConsulta,profSaude_idProfSaude,paciente_IdPaciente,horaConsulta")] Consulta consulta)
         {
             if (ModelState.IsValid)
@@ -264,6 +278,7 @@ namespace RMC.TCC.Clinica.Controllers
         }
 
         // GET: Consultas/Delete/5
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -281,6 +296,7 @@ namespace RMC.TCC.Clinica.Controllers
         // POST: Consultas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,Funcionario")]
         public ActionResult DeleteConfirmed(int id)
         {
             Consulta consulta = db.Consulta.Find(id);

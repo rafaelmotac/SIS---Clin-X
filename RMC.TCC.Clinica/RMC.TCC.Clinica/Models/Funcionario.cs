@@ -22,7 +22,7 @@ namespace RMC.TCC.Clinica.Models
 
         [Required(ErrorMessage = "O campo CPF é obrigatório")]
         [DisplayName("CPF")]
-        [StringLength(11, ErrorMessage = "O campo CPF deve conter no máximo 11 caracteres")]
+        [StringLength(maximumLength: 11, MinimumLength = 6, ErrorMessage = "O campo CPF deve conter no mínimo 6 e no máximo 11 caracteres")]
         [Index(IsUnique = true)]
         [Remote("verificaCpf", "Funcionarios", "cpf", AdditionalFields = "idFuncionario", ErrorMessage = "CPF já existe no banco de dados!")]
         public string cpf { get; set; }

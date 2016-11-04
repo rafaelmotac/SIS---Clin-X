@@ -6,6 +6,7 @@ namespace RMC.TCC.Clinica.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     [Table("Convenio")]
     public partial class Convenio
@@ -18,6 +19,7 @@ namespace RMC.TCC.Clinica.Models
         [StringLength(45, ErrorMessage = "Nº de Convênio deve conter no máximo 45 caracteres")]
         [DisplayName("Nº. de Convênio")]
         [Index("UQ_numConvenio_nomeConvenio", 1, IsUnique = true)]
+        [Remote(action:"verificaConvenio",controller:"Convenios",AdditionalFields = "paciente_IdPaciente,nomeConvenio",ErrorMessage = "Já existe um paciente com este convênio!")]
         public string numConvenio { get; set; }
 
         [Required]

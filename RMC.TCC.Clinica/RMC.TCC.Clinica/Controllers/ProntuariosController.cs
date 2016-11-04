@@ -51,17 +51,34 @@ namespace RMC.TCC.Clinica.Controllers
         }
 
         [Authorize(Roles = "Prof.Saude,Admin")]
+        [HttpGet]
         public ActionResult CadastrarExameProntuario(int paciente_IdPaciente)
         {
             Prontuario prontuario = db.Prontuario.Find(paciente_IdPaciente);
 
-            ViewBag.prontuario = prontuario;
+            //ViewBag.prontuario = prontuario;
 
             List<Exame> exames = (from e in db.Exame select e).ToList();
 
             ViewBag.Exames = new SelectList(exames, "idExame", "Nome");
 
-            return View();
+            return View(prontuario);
+        }
+
+        [Authorize(Roles = "Prof.Saude,Admin")]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult CadastrarExameProntuario(int paciente_IdPaciente, int idExame)
+        {
+            Prontuario prontuario = db.Prontuario.Find(paciente_IdPaciente);
+
+            Exame exame = db.Exame.Find(idExame);
+
+            prontuario.Exame.Add(exame);
+
+            db.SaveChanges();                
+
+            return RedirectToAction("Edit",new { id = paciente_IdPaciente });
         }
 
         // GET: Prontuarios

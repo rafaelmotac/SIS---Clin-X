@@ -33,9 +33,19 @@ namespace RMC.TCC.Clinica.Controllers
 
         [Authorize(Roles = "Admin,Prof.Saude,Funcionario")]
         // GET: Pacientes
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             var paciente = db.Paciente.Include(p => p.Convenio);
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                paciente = paciente.Where(s => s.cpf.Contains(searchString));
+            }
+            else
+            {
+                paciente = db.Paciente.Include(p => p.Convenio);
+            }
+
             return View(paciente.ToList());
         }
         

@@ -1,3 +1,29 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@*
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+*@
+
+@{ 
+    if (!this.User.Identity.IsAuthenticated)
+    {
+        Layout = "~/Views/Shared/_LayoutNull.cshtml";
+    }
+    else if(this.User.IsInRole("Admin"))
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+
+    }
+    else if (this.User.IsInRole("Funcionario"))
+    {
+        Layout = "~/Views/Shared/_LayoutFuncionario.cshtml";
+    }
+    else if (this.User.IsInRole("Manager"))
+    {
+        Layout = "~/Views/Shared/_LayoutManager.cshtml";
+    }
+    else if (this.User.IsInRole("Prof.Saude"))
+    {
+        Layout = "~/Views/Shared/_LayoutProfSaude.cshtml";
+    }
 }

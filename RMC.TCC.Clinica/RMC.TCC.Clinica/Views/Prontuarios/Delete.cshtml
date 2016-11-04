@@ -1,12 +1,12 @@
 ﻿@model RMC.TCC.Clinica.Models.Prontuario
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Deletar";
 }
 
-<h2>Delete</h2>
+<h2>Deletar</h2>
 
-<h3>Você tem certeza que quer deletar o prontuário ?</h3>
+<h3>Você tem certeza que quer deletar ?</h3>
 <div>
     <h4>Prontuario</h4>
     <hr />
@@ -49,8 +49,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Deletar Prontuário" onclick="confirm('Deletar prontuário do paciente @Model.Paciente.nome ?')" class="btn btn-danger" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Deletar" onclick="confirm('Deletar prontuário do paciente @Model.Paciente.nome ?')" class="btn btn-danger" /> |
+            @Html.ActionLink("Voltar para Listagem", "Index")
         </div>
     }
 </div>

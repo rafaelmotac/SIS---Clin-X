@@ -7,8 +7,30 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Cadastrar Novo Funcionario", "Create")
 </p>
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "Funcionarios", method: FormMethod.Post, htmlAttributes: new { @class = "form-inline" }))
+{
+    <p>
+        <div class="form-group">
+            <label>Pesquisar por CPF:</label>
+            @Html.TextBox("searchString", null, htmlAttributes: new
+       {
+           @class = "form-control",
+        @*@required = "true",*@
+           @placeholder = "CPF..",
+           @type = "number",
+           @min = "1000000",
+           @max = "99999999999",
+           @step = "1"
+       })
+
+            <input type="submit" class="btn btn-primary" value="Procurar" />
+        </div>
+
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -41,9 +63,9 @@
             @Html.DisplayFor(modelItem => item.dtNascimento)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idFuncionario }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idFuncionario }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idFuncionario })
+            @Html.ActionLink("Editar", "Edit", new { id=item.idFuncionario }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.idFuncionario }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.idFuncionario })
         </td>
     </tr>
 }

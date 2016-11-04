@@ -34,9 +34,23 @@ namespace RMC.TCC.Clinica.Controllers
         }
 
         // GET: Funcionarios
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Funcionario.ToList());
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                var funcionario = db.Funcionario.ToList();
+
+                funcionario = funcionario.Where(s => s.cpf.Contains(searchString)).ToList();
+
+                return View(funcionario);
+            }
+            else
+            {
+                var funcionario = db.Funcionario.ToList();
+
+                return View(funcionario);
+            }
+           
         }
 
         // GET: Funcionarios/Details/5

@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<RMC.TCC.Clinica.Models.Consulta>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -35,9 +33,9 @@
             @Html.DisplayFor(modelItem => item.horaConsulta)
         </td>          
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idConsulta }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idConsulta }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idConsulta })
+            @Html.ActionLink("Editar", "Edit", new { id=item.idConsulta }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.idConsulta }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.idConsulta })
         </td>
     </tr>
 }

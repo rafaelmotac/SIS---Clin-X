@@ -1,14 +1,33 @@
 ﻿@model IEnumerable<RMC.TCC.Clinica.Models.Paciente>
-
 @{
     ViewBag.Title = "Index";
 }
-
 <h2>Index</h2>
-
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Cadastrar Novo Paciente", "Create")
 </p>
+
+@using (Html.BeginForm(actionName: "Index", controllerName: "Pacientes", method: FormMethod.Post, htmlAttributes: new { @class = "form-inline" }))
+{
+    <p>
+        <div class="form-group">
+            <label>Pesquisar por CPF:</label>
+            @Html.TextBox("searchString", null, htmlAttributes: new
+       {
+           @class = "form-control",
+        @*@required = "true",*@
+           @placeholder = "CPF..",
+           @type = "number",
+           @min = "1000000",
+           @max = "99999999999",
+           @step = "1"
+       })
+
+            <input type="submit" class="btn btn-primary" value="Procurar" />
+        </div>
+
+    </p>
+}
 <table class="table">
     <tr>
         <th>
@@ -31,33 +50,32 @@
         </th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Convenio.numConvenio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cpf)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.telefone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.endereco)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dtNascimento)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idPaciente }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idPaciente }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idPaciente })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Convenio.numConvenio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dtNascimento)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.idPaciente }) |
+                @Html.ActionLink("Detalhes", "Details", new { id = item.idPaciente }) |
+                @Html.ActionLink("Deletar", "Delete", new { id = item.idPaciente })
+            </td>
+        </tr>
+    }
 </table>

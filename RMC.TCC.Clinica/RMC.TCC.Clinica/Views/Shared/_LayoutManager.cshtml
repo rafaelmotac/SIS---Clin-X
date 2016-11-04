@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr") 
+    @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryUn")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/inputmask")
     <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
-
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -37,44 +36,15 @@
                             <li>@Html.ActionLink("Sobre", "About", "Home")</li>
                             <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
                         </ul>
-                    </li>
-                    <li>@Html.ActionLink("Criar Perfil", "Index", "Role")</li>
+                    </li>  
                     <li class="dropdown">
                         <a class="dropdown-toggle" id="consultaDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Consulta
+                            Prof.Saude
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="consultaDropDown">
-                            <li><a href="/Consultas/Index">Index</a></li>
-                            <li><a href="/Consultas/Create">Cadastrar</a></li>
-                            <li class="dropdown-submenu">
-                                <a>Buscar</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="/Consultas/BuscarPorPaciente">Buscar Por Paciente</a></li>
-                                    <li><a href="/Consultas/BuscarPorMedico">Buscar Por Médico</a></li>
-                                    <li><a href="/Consultas/BuscarPorDia">Buscar Por Dia</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" id="consultaDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Prontuário
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="consultaDropDown">
-                            <li><a href="/Prontuarios/Cadastrar">Cadastrar</a></li>
-                            <li><a href="/Prontuarios/Buscar">Buscar</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" id="consultaDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Pacientes
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="consultaDropDown">
-                            <li><a href="/Pacientes/Index">Index</a></li>
-                            <li><a href="/Pacientes/Create">Cadastrar</a></li>
+                            <li><a href="/ProfSaudes/Index">Index</a></li>
+                            <li><a href="/ProfSaudes/Create">Cadastrar</a></li>                            
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -90,8 +60,9 @@
                     <li class="dropdown">
                         <a href="/Account/Register">
                             Registrar Usuario
-                        </a>
+                        </a>                  
                     </li>
+                    
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -101,10 +72,10 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - SIS - Clinica X</p>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
- 
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
