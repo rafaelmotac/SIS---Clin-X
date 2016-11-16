@@ -16,12 +16,23 @@
             <tr>
                 <th>Código</th>
                 <th>Nome</th>
+                <th></th>
             </tr>
             @foreach (RMC.TCC.Clinica.Models.Exame exame in Model.Exame)
             {
                 <tr>
                     <td>@exame.idExame</td>
                     <td>@exame.nome</td>
+                    <td>
+                        @using (Html.BeginForm("DeletarExameProntuario", "Prontuarios", FormMethod.Post))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            @Html.Hidden("idProntuario", Model.paciente_IdPaciente)
+                            @Html.Hidden("idExame", exame.idExame)                     
+                            <input type="submit" onclick="return confirm('Tem certeza que quer deletar o Exame ?');" class="btn btn-danger" value="Excluir" />
+                        }
+                    </td>
                 </tr>
             }
         </table>

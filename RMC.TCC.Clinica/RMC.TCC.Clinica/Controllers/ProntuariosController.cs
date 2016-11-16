@@ -20,6 +20,20 @@ namespace RMC.TCC.Clinica.Controllers
         {
             return View();
         }
+
+        [Authorize(Roles = "Admin,Prof.Saude")]
+        public ActionResult DeletarExameProntuario(int idProntuario, int idExame)
+        {
+            Prontuario prontuario = db.Prontuario.Find(idProntuario);
+
+            Exame exame = db.Exame.Find(idExame);
+
+            prontuario.Exame.Remove(exame);
+            db.SaveChanges();
+
+            return View("Exames",prontuario);
+        }
+
         [Authorize(Roles = "Prof.Saude,Admin")]
         [ValidateAntiForgeryToken]
         public ActionResult resultadoBuscarProntuario(string cpf)
