@@ -9,8 +9,29 @@
 <p>
     @Html.ActionLink("Cadastrar Novo Exame", "Create")
 </p>
+@using (Html.BeginForm(actionName: "Index", controllerName: "Exames", method: FormMethod.Post, htmlAttributes: new { @class = "form-inline" }))
+{
+    <p>
+        <div class="form-group">
+            <label>Pesquisar por ID:</label>
+            @Html.TextBox("searchString", null, htmlAttributes: new
+       {
+           @class = "form-control",
+        @*@required = "true",*@
+           @placeholder = "ID Exame..",
+           @type = "number",       
+           @step = "1"
+       })
+            <input type="submit" class="btn btn-primary" value="Procurar" />
+        </div>
+    </p>
+}
+
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idExame)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.nome)
         </th>
@@ -22,6 +43,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idExame)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.nome)
         </td>

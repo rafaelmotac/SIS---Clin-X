@@ -16,9 +16,21 @@ namespace RMC.TCC.Clinica.Controllers
         private ClinicaDb db = new ClinicaDb();
 
         // GET: Exames
-        public ActionResult Index()
+        public ActionResult Index(int? searchString)
         {
-            return View(db.Exame.ToList());
+            var exames = db.Exame.ToList();
+
+            if (searchString != null)
+            {
+                exames = exames.Where(s => s.idExame.Equals(searchString)).ToList();
+            }
+            else
+            {
+                exames = db.Exame.ToList();
+            }
+
+            return View(exames);
+
         }
 
         // GET: Exames/Details/5
