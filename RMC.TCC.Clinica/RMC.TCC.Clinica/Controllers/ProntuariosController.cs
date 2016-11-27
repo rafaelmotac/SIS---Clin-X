@@ -31,7 +31,8 @@ namespace RMC.TCC.Clinica.Controllers
             prontuario.Exame.Remove(exame);
             db.SaveChanges();
 
-            return View("Exames",prontuario);
+            //return View("Exames",prontuario);
+            return RedirectToAction("Edit", new { id = idProntuario });
         }
 
         [Authorize(Roles = "Prof.Saude,Admin")]
