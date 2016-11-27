@@ -44,7 +44,7 @@ namespace RMC.TCC.Clinica.Models
 
         [Required(ErrorMessage = "O campo CRM é obrigatório")]
         [DisplayName("CRM")]
-        [Range(4,9999999999)]
+        [Range(999,9999999999,ErrorMessage = "O campo deve ser maior ou igual a 999 e menor ou igual a 9999999999")]
         [Index(IsUnique =true)]
         [Remote("verificaCrm", "ProfSaudes", "crm", AdditionalFields = "idProfSaude", ErrorMessage = "CRM já existe no banco de dados!")]
         public int crm { get; set; }
